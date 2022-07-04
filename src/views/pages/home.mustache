@@ -1,0 +1,64 @@
+{{>partials/header}}
+<link rel="stylesheet" type="text/css" href="../../public/css/style.css" />
+
+Salve, {{name}} {{lastName}} ! 
+
+{{^showOld}}
+    suave?
+{{/showOld}}
+
+<hr/>
+
+
+
+
+
+<fieldset>
+    <legend>Novo Usuário</legend>
+    <form method="POST" action="/novousuario">
+        <input type="text" name="name" placeholder="Digite um nome" /><br/><br/>
+        <input type="number" name="age" placeholder="Digite uma idade" /><br/><br/>
+        <input type="submit" value="Inserir Usuário" />
+    </form>
+</fieldset>
+
+
+
+<h2>Usuarios do Banco de dados</h2>
+<ul>
+{{#Users}}
+<div style="display: flex, margin: 5-px">
+    {{name}} - Idade: {{age}} 
+<a href="/usuario/{{id}}/mais">+</a> 
+<a href="/usuario/{{id}}/menos">-</a>  
+<a href="/usuario/{{id}}/excluir">delete</a> 
+</li>
+</div>
+{{/Users}}
+</ul>
+
+
+<hr/>
+<h2>Produtos</h2>
+<ul>
+    {{#products}}
+        {{>partials/productItem}}
+    {{/products}}
+</ul>
+
+<hr/>
+<h2>Produtos a partir de R$ 12</h2>
+<ul>
+    {{#expensives}}
+        {{>partials/productItem}}
+    {{/expensives}}
+</ul>
+
+
+
+
+
+
+
+
+{{>partials/footer}}

@@ -1,4 +1,4 @@
-Arquivos do módulo inicial de Node + Typescript, da estrutura MVC aplicada.
+estrutura MVC Node Js + TS, Crud conectado com banco de dados.
 
 ### Pré-requisitos globais:
 `npm i -g nodemon typescript ts-node`

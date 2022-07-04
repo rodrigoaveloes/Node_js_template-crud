@@ -39,6 +39,9 @@ export const CreateNewUser = async (req:Request, res: Response) => {
 
 
 
+
+
+
 export const att = async (req:Request, res: Response) => {
     let newUserName: string = req.body.name;
     let newUserAge: number = parseInt(req.body.age);
@@ -98,6 +101,9 @@ export const diminuirIdade = async (req: Request, res: Response) => {
  res.redirect('/')
    }
 
+
+
+
    export const excluir = async (req: Request, res: Response) => {
     let id: string = req.params.id
     await User.destroy({
@@ -105,3 +111,32 @@ export const diminuirIdade = async (req: Request, res: Response) => {
     });
     res.redirect('/')
    }
+
+
+   export const editar = async (req: Request, res: Response) => {
+      let id: string = await req.params.id as string
+     const user = await User.findAll({where: {id: id}})
+     console.log(user)
+      res.render('pages/editar', {
+        User: user,
+        id       
+    });
+
+   }
+
+   
+   export const atualizarNome = async (req: Request, res: Response) => {
+    let id: string = await req.params.id as string
+    console.log(id)
+   const user = await User.findAll({
+    
+   })
+   console.log(user)
+   
+    res.redirect('/') 
+
+  }
+ 
+
+
+

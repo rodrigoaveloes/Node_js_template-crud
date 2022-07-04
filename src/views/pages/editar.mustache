@@ -1,0 +1,19 @@
+{{>partials/header}}
+<ul>
+{{#User}}
+<div style="display: flex, margin: 5-px">
+seu nome de usuario atual é: {{name}}
+</li>
+</div>
+{{/User}}
+</ul>
+<fieldset>
+    <form method="POST" action="/atualizarNome">
+        <input type="text" name="newName" placeholder="novo nome de usuario" /><br/><br/>
+        <input type="submit" value="Editar usuario"/>
+    </form>
+</fieldset>
+
+
+{{>partials/footer}}
+

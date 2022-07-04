@@ -18,10 +18,8 @@ const Users = await User.findAll({})
     res.render('pages/home', {
         name: 'Rodrigo',
         lastName: 'Avelões',
-        showOld: 90,
         products: list,
         expensives: expensiveList,
-        frasesDoDia: [],
         Users,
     });
 };

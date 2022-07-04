@@ -1,7 +1,6 @@
 {{>partials/header}}
-<link rel="stylesheet" type="text/css" href="../../public/css/style.css" />
 
-Salve, {{name}} {{lastName}} ! 
+Salve, {{name}} {{lastName}}! 
 
 {{^showOld}}
     suave?
@@ -18,7 +17,7 @@ Salve, {{name}} {{lastName}} !
     <form method="POST" action="/novousuario">
         <input type="text" name="name" placeholder="Digite um nome" /><br/><br/>
         <input type="number" name="age" placeholder="Digite uma idade" /><br/><br/>
-        <input type="submit" value="Inserir Usuário" />
+        <input type="submit" value="Inserir Usuário"/>
     </form>
 </fieldset>
 
@@ -29,9 +28,10 @@ Salve, {{name}} {{lastName}} !
 {{#Users}}
 <div style="display: flex, margin: 5-px">
     {{name}} - Idade: {{age}} 
-<a href="/usuario/{{id}}/mais">+</a> 
-<a href="/usuario/{{id}}/menos">-</a>  
-<a href="/usuario/{{id}}/excluir">delete</a> 
+<a href="/usuario/{{id}}/menos">-</a> 
+<a href="/usuario/{{id}}/mais">+</a> <br/> 
+<a href="/usuario/{{id}}/excluir">deletar</a> 
+<a href="/usuario/{{id}}/editar">Editar </a> 
 </li>
 </div>
 {{/Users}}
